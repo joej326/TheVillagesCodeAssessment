@@ -1,0 +1,17 @@
+<ul role="list" class="divide-y divide-white/5">
+  @for (product of apiService.products(); track product.id) {
+  <li class="py-4">
+    <div class="flex items-center gap-x-3">
+      <img [src]="product.iconUrl" [alt]="product.title" class="h-6 w-6 flex-none">
+      <h3 class="flex-auto truncate text-sm font-semibold leading-6 text-white">{{product.title}}</h3>
+      <span class="flex-none text-xs text-gray-500">{{product.price | currency}}</span>
+    </div>
+    <p class="mt-3 truncate text-sm text-gray-500">
+      Sold <span class="text-gray-400">{{product.soldToday}}</span> of <span
+        class="text-gray-400">{{product.total}}</span> today: <span class="font-mono text-gray-400">{{product |
+        soldPercent}}</span>% | <span
+        class="text-gray-400">{{product.price * product.soldToday | currency}}</span> | <span class="text-gray-400">{{product.available}}</span> remaining
+    </p>
+  </li>
+  }
+</ul>
