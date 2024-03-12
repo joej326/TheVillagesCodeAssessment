@@ -10,11 +10,11 @@
     </colgroup>
     <thead class="border-b border-white/10 text-sm leading-6 text-white">
       <tr>
-        <th scope="col" class="sticky top-0 z-10 py-2 pl-4 pr-8 font-semibold sm:pl-6 lg:pl-8">Customer</th>
-        <th scope="col" class="sticky top-0 z-10 hidden py-2 pl-0 pr-8 font-semibold sm:table-cell">Total</th>
-        <th scope="col" class="sticky top-0 z-10 hidden py-2 pl-0 pr-8 font-semibold md:table-cell lg:pr-20">Method
+        <th (click)="handleCustomerSort()" scope="col" class="sticky top-0 z-10 py-2 pl-4 pr-8 font-semibold sm:pl-6 lg:pl-8">Customer</th>
+        <th (click)="handleTotalSort()" scope="col" class="sticky top-0 z-10 hidden py-2 pl-0 pr-8 font-semibold sm:table-cell">Total</th>
+        <th (click)="handleMethodSort()" scope="col" class="sticky top-0 z-10 hidden py-2 pl-0 pr-8 font-semibold md:table-cell lg:pr-20">Method
         </th>
-        <th scope="col" class="sticky top-0 z-10 py-2 pl-0 pr-4 text-right font-semibold sm:pr-8 sm:text-left lg:pr-20">
+        <th (click)="handleStatusSort()" scope="col" class="sticky top-0 z-10 py-2 pl-0 pr-4 text-right font-semibold sm:pr-8 sm:text-left lg:pr-20">
           Status</th>
         <th scope="col"
           class="sticky top-0 z-10 hidden py-2 pl-0 pr-4 text-right font-semibold sm:table-cell sm:pr-6 lg:pr-8">
@@ -22,7 +22,7 @@
       </tr>
     </thead>
     <tbody class="divide-y divide-white/5">
-      @for (sale of apiService.sales(); track sale.id) {
+      @for (sale of fetchedSales; track sale.id) {
       <tr>
         <td class="py-4 pl-4 pr-8 sm:pl-6 lg:pl-8">
           <div class="flex items-center gap-x-4">

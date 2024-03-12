@@ -74,7 +74,7 @@ export class ApiService {
         iconUrl: 'assets/water-icon.svg',
         id: 'water',
         imageUrl: 'assets/water.svg',
-        price: +'$1',
+        price: 1,
         soldToday: 8,
         title: 'Water',
         total: 44 + 8,
